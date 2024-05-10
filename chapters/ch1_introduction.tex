@@ -1,0 +1,62 @@
+\setchapterpreamble[u]{\optmargintoc}
+\chapter{Introduction}
+\labch{intro}
+
+% \begin{itemize}
+%     \item Cool galaxy-brain hook (ca. 1 page, 300 words)
+%     \item General stuff about active matter (ca. 1 page, 300 words)
+%     \item Cilia are cool and everywhere and do really interesting stuff, and are awesome to research. (ca. 1 page, maybe a little over 300 words)
+%     \item I think Mirna did this section \textit{really} well so let's just take a lot of inspiration from her layout.
+% \end{itemize}
+
+If one were to go through some of the anatomical sketches made by Leonardo da Vinci, one might find something unexpected: a drawing of someone with their heart on the right side of their chest, as opposed to the more usual left side. It's not certain whether he simply reflected the sketch as he famously reflected his handwriting, but this inversion is a real condition, known as \textit{situs inversus}\boxedsidenote[][-70pt]{If he really did observe \textit{situs inversus}, he didn't leave any record to indicate that he found it interesting or unusual. Partial inversions (usually called \textit{situs ambiguous}) were later explicitly described by Hieronymus Fabricius~\cite{pennekamp_situs_2015} and Marco Aurelio Severino~\cite{ogunlade_role_2015}, with the full inversion probably being first described later by Matthew Baillie~\cite{ogunlade_role_2015, baillie_xxi_1997}.}.\nosidecite[160pt]{pennekamp_situs_2015, ogunlade_role_2015, baillie_xxi_1997}
+Approximately one in ten thousand people are born with this condition, where some or all the organs in the body are reflected left to right. Most patients have all their organs reflected and thus experience no major health issues, as the relative position of all organs is unchanged -- they might never even know of their unusual organ arrangement. 
+% It's very possible to live an entire life with this condition without ever having the slightest inkling, finding out only during a medical scan or procedure that incidentally uncovers the unusual arrangement.
+However, an unlucky few will experience only a partial reflection, leading to potentially life-altering complications~\sidecite[100pt]{eitler_situs_2022}. Even centuries on from the first descriptions, we still don't know exactly what causes this to happen. We do, however, know that tiny hairlike organelles named cilia play a central role~\sidecite[100pt]{essner_conserved_2002, mcgrath_cilia_2003}, just as they will play a central role in the work described in this thesis.
+
+One can hardly blame the physician Matthew Baillie for describing this inversion as `remarkable' in a letter to a friend~\cite{baillie_xxi_1997}, but \textit{situs inversus} is far from the only fascinating or unexpected thing in biology. The billions of years that have been spent by natural selection tweaking and optimising living organisms have left us some incredibly complex and robust active systems that we are only just beginning to understand. Cilia and the associated disorders are just one very narrow example -- the wider field of active matter research concerns itself with systems from scales much smaller than cells (such as cilia or swimming microorganisms) to scales much greater than the size of organisms (such as flocking behaviour in sheep or crowd dynamics at sports venues). Nature has something of a head start on us, as the field of active matter research has existed for barely three decades -- possibly the best known model in active matter is the Vicsek model of flocking, which was only defined in 1995~\sidecite{vicsek_novel_1995}) -- whereas life on this planet may have existed for close to 4.5 billion years. However, there is a bright side to the rather daunting problem we find ourselves with, as we are presented with a unique opportunity to dig into these systems and begin to unravel the mysteries that life has left for us.
+
+
+% Now begin on cilia specifically.
+\section{Motivation}
+
+But despite (or because of) the plethora of systems that fall under the purview of active matter, we have to focus our efforts somewhere, and in this thesis that focus will fall on cilia. These are tiny hairlike organelles\boxedsidenote{An organelle is a specialised part of a cell, analogous to how an organ is a specialised part of an organism. Examples include the nucleus, the cell membrane, or the ribosome.} which can be found on the membranes of most eukaryotic cells~\sidecite{nachury_establishing_2019}, i.e. cells within the group of eukaryotes, organisms whose cells have nuclei. This group includes all animals and many unicellular organisms. Within those organisms, cilia have an astounding array of tasks to perform; if they were to suddenly disappear, the lungs would stop working~\sidecite{yaghi_airway_2016}, the brain would cease to function~\sidecite{faubel_cilia-based_2016}, reproduction would grind to a halt~\sidecite{lyons_reproductive_2006, girardet_primary_2019}, little microorganisms would stop moving and subsequently starve to death~\sidecite{funfak_paramecium_2015}, and much more besides.
+% TODO: Andrej had an issue with plants+fungi in conjunction with cilia.
+
+Given the ubiquity and importance of these little organelles, one would hope that we understood them quite well, but this isn't really the case, despite having known about them for centuries. The first of the two broad types of cilia, termed `motile cilia' due to their ability to wave under their own power, was probably first discovered in 1675 at the earliest. We now know that they have roles pumping fluid, and under certain circumstances can coordinate their beating with other nearby cilia (since they are usually found in large patches called `carpets', there are other cilia nearby more often than not) to improve their energetic pumping efficiency~\sidecite{osterman_finding_2011, elgeti_emergence_2013}. The much-maligned second type, named `primary cilia' and typically found with only one per cell, were discovered a century later and immediately ignored by the scientific community at large, as their lack of motion meant they were assumed to be useless and vestigial. Only more recently, some two centuries after the initial discovery of cilia, was it realised that primary cilia have sensory roles in the body, such as detection of forces and chemicals, leading to a surge in interest. Later still, it was found that motile cilia also have sensory roles, but the implications of this aren't yet clear~\sidecite{bloodgood_sensory_2010}.
+
+There are a number of open questions around these tiny structures, concerning how they interact with each other and the environment, despite numerous studies investigating them. A few that are addressed in this thesis include:
+\begin{itemize}
+    \item Why are chemical detectors (more commonly called `chemoreceptors') on cilia at all? Building and maintaining cilia to host chemoreceptors comes with an energetic cost that could be spent elsewhere in the organism.
+    \item Is there a reason that motile cilia are sometimes chemosensitive? This combination of motility and chemosensing puts a lot of complexity in one small compartment. Is motility somehow beneficial to the chemosensitivity of the cilia?
+    \item Could there be a benefit to having chemosensitive motile cilia in bundles or carpets? It seems like each cilium would deplete the local concentration field, leading to a lower sensitivity per cilium.
+    \item How do cilia coordinate their waving? They are typically submerged in fluid; are hydrodynamic interactions between cilia sufficient to explain the relatively fast synchronisation seen in biological systems?
+\end{itemize}
+
+% This thesis contains material from the following authored publications: \todo{Actually fill this in}
+% \begin{itemize}
+%     \item \fullcite{hickey_ciliary_2021}. RG and AV conceptualised the project. DJH and AV designed and implemented the software and analysis. DJH, AV, and RG wrote and edited the manuscript.
+%     \item \fullcite{hickey_nonreciprocal_2023}. AV and RG conceptualised the project. DJH and AV designed and implemented the software and analysis. DJH, RG and AV wrote and edited the manuscript.
+% \end{itemize}
+
+\section{Thesis outline}
+
+The outline of the remainder of this thesis is as follows:
+\begin{description}
+    \item[Chapter~\ref{ch:background}:~\nameref{ch:background}] \phantom{X}
+    
+    I discuss the background biology and physics required to understand cilia and the later chapters of this thesis. The structure of cilia is explained, and the peculiar behaviour of fluids at the microscopic scales of cilia is covered in detail. I also delve into some of the approaches that have been taken in modelling the interaction between cilia and fluid.
+
+    \item[Chapter~\ref{ch:results_particle}:~\nameref{ch:results_particle}] \phantom{X}
+    
+    By developing analytical and computational models, we investigate the interactions of both primary and motile cilia (in the latter case considering bundles of motile cilia as well as isolated individual motile cilia) with chemicals at a known concentration, with a view to better understand how cilium geometry and motility affects their ability to sense chemicals. We consider how well the model reflects reality, and the biological implications for chemoreception by cilia.
+    
+    \item[Chapter~\ref{ch:results_sync}:~\nameref{ch:results_sync}] \phantom{X}
+    
+    We develop a model of cilium synchronisation via hydrodynamic interactions, and use it to carry out an investigation of how hydrodynamic interactions lead to synchronisation, and what factors of the cilia, their arrangement, and their motion are essential for synchronisation. Most importantly, we find that our modelled intercilium hydrodynamic interactions are nonreciprocal, and we discuss the importance of this fact. We finally consider the extent to which these results reflect real-world cilia, and what our model leaves out.
+    
+    \item[Chapter~\ref{ch:conclusion}:~\nameref{ch:conclusion}] \phantom{X}
+    
+    I summarise the work presented, and discuss some related potential future research. The implications of this work are considered.
+    
+\end{description}

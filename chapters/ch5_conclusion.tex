@@ -1,0 +1,146 @@
+\setchapterpreamble[u]{\optmargintoc}
+\chapter{Conclusion}
+\labch{conclusion}
+
+\begin{quote}
+    \textit{%
+        Treacle nodded. ``I hadn't looked at it like that,'' he said, ``but you're absolutely right. He's really pushed back the boundaries of ignorance. There's so much about the universe we don't know.''%
+    }%
+    % \textit{Science is not about building a body of known ‘facts’. It is a method for asking awkward questions and subjecting them to a reality-check, thus avoiding the human tendency to believe whatever makes us feel good.}
+    
+    \hfill Sir Terry Pratchett,~\textit{Equal Rites}
+\end{quote}
+
+% Good hook
+Given the ubiquity of cilia, and their centrality to so many biological processes, it is partly a shame, but mostly a fantastic opportunity, that we still don't fully understand why they are built the way they are and act the way they do, and they continue to be the source of so many interesting open questions. We have tried to make some progress towards closing some of these open questions, and in the process we have opened a few new ones -- as Pratchett put it, in this work we have pushed the boundaries of ignorance, continuing a process that presumably began when the first organism with eyes looked up at the stars and wondered what they were.
+
+% My cunning plan:
+% 1. What have we learned? What are the implications?
+% 2. What're the limitations, or things we get wrong?
+% 3. Future work, applications, and galaxy-brain ideas
+
+% ========================== %
+% === 1. WHAT WE LEARNED === %
+% ========================== %
+% This bit could be much longer. Komal said more. Mirna/Lorenzo said about the same amount per chapter, but had more chapters.
+In Chapter~\ref{ch:results_particle}, by considering the mass transport to a perfectly reactive cilium, we found that the geometry of the cilium confers a chemosensory advantage over a chemosensory patch, and that motility confers a chemosensory advantage over immotility, even when motile cilia are bunched together in groups. These results were robust at a wide range of biologically plausible values of the cilium beating frequency, and would go some way towards explaining why chemoreceptors are often found on cilia (both motile and primary). 
+
+That said, the model considered in this chapter has some limitations. We assumed that particles are absorbed by the cilium immediately upon first touching it, which is only justified if the receptors cover a sufficient fraction of the surface area (though the required fraction is extremely low: in the absence of advection, only 1\% of the surface must be covered by receptors to achieve near-perfect sensitivity~\sidecite{berg_physics_1977}). The Rotne-Prager mobility tensor that we used does not perfectly satisfy the no-slip boundary, especially at high Péclet numbers, which should not change the qualitative story told by the results but could have a quantitative impact. We have also assumed that the signalling molecules being detected are extremely small relative to the cilium, which may not be completely true for large protein complexes or vesicles.
+
+Then, in Chapter~\ref{ch:results_sync}, we considered the interactions of a lattice of cilia, and found that stable order could emerge in linear time even in finite systems with open boundaries, provided the hydrodynamic intercilium coupling was nonreciprocal. Without this nonreciprocal coupling, the order emerged in nonlinear time, and the final state was non-deterministic. This suggests that for cilia, nonreciprocal coupling is incredibly important.
+
+Possibly the primary limitation in the model in this chapter is that it does not consider the role of non-identical cilium forms and noisy behaviour. Thermal noise will play a role in cilium motion simply due to their small size, but additionally the driving process for the motile cilium is itself stochastic, i.e. there are active fluctuations~\sidecite{ma_active_2014}. In biological systems, ciliary synchronisation is highly resistant to noise~\sidecite{gilpin_multiscale_2020} and it would be useful to know if this behaviour is reproduced by our model. Different cilia, even on the same cell, can have differing intrinsic beat frequencies~\sidecite{goldstein_noise_2009}, and there is no reason we would necessarily expect every cilium to be identical in length, especially when they have been subject to damage or disease~\sidecite{leopold_smoking_2009}. The simplification of the entire cilium to a single sphere on a circular trajectory simplified the calculations and simulation to a huge degree, and probably does not qualitatively affect the results, but it does remove certain near-field effects. Given that we found near-field hydrodynamic interactions to be incredibly important to synchronisation, it is possible that the synchronisation would be even faster with a cilium model more akin to the chain of beads used in Ch.~\ref{ch:results_particle}, so this is another avenue worth exploring.
+
+Considering the work as a whole, we see that interactions between motile cilia are extremely beneficial, increasing sensing and pumping efficiency. It should therefore come as no surprise that motile cilia are often found in carpets, as the close proximity ensures that per-cilium chemosensitivity sees an improvement, as well as permitting the cilia to benefit from near-field hydrodynamic interactions so that they can coordinate their beating.
+
+
+% ======================================= %
+% === 3. FUTURE WORK AND APPLICATIONS === %
+% ======================================= %
+Other than addressing the limitations discussed above, there is plenty of additional research to be done on these and similar models. For example, we showed that motile cilia in close proximity can quickly synchronise to form a metachronal wave, and we also showed that a bundle of motile cilia with random phases can be more chemosensitive per cilium than a single motile cilium on its own. It would be interesting to see whether this increase is retained if the cilium phases are metachronally synchronised rather than randomised, which seems probable given that the high volume flow rates achieved by metachronal waves could draw a large amount of signalling molecules into the cilium carpet.
+
+Coronaviruses in general frequently attack and damage ciliated cells~\sidecite{jonsdottir_coronaviruses_2016}, and patients with SARS-CoV-2 are known to have ciliated cells that have lost their cilia entirely~\sidecite{buqaileh_can_2021}, resulting in a reduced rate of mucus clearance from the lungs and airway by cilia~\sidecite{robinot_sars-cov-2_2021}. Since this mucociliary clearance is one of the first lines of defence against airborne pathogens and particulates, this results in higher susceptibility to disease and damage~\sidecite{tilley_cilia_2015}. It is possible that the lower cilium density results in a loss of metachronal coordination, which in turn causes this decreased pumping efficiency seen in SARS-CoV-2 patients, but it could simply be the case that a lower cilium density results in impeded clearance of mucus from the airways due to fewer cilia moving mucus. Better understanding the mechanisms underlying this reduced pumping efficiency could be of significant value, and could be achieved by using a version of our model to investigate how the loss or damage of cilia affects the ability of ciliary carpets to synchronise, though it would need to be adapted to account for the non-Newtonian nature of the mucus.
+
+% In swimmers like \textit{Paramecium}, some of the cilia are found in doublets~\sidecite{bouhouche_paramecium_2022}, where two cilia are displaced by a distance much smaller than the typical intercilium distance. It's not clear whether this carries some sort of advantage in swimming efficiency, swimming speed, or cilium synchronisation, but with our model of cilium synchronisation, we could potentially simulate this swimmer and thus better understand why these doublets exist. 
+
+It has been mentioned several times in this work that the left-right differentiation in many vertebrates originates with cilia. The exact mechanism isn't known, but it is known that motile cilia can generate asymmetrical fluid flows in structures generally referred to as `left-right organisers'. One hypothesis is that these asymmetric flows create nonuniform distributions of signalling molecules that are then detected by other cilia, but it has also been proposed that mechanosensitive cilia detect these asymmetrical flows directly~\sidecite{dasgupta_cilia_2016}. We could potentially adapt our models to the geometry of the left-right organiser, and thus try to better understand the origins of left-right differentiation.
+
+One recent paper suggested a role for organisms like \textit{Paramecium} in surgery~\sidecite{sarvestani_simulation_2016}. \textit{Paramecium} can sense chemical gradients and swim along them, so if \textit{Paramecium} were inserted into a human body, perhaps it could be guided around by injecting inert calcium salts in the right places in the body. This obviously all remains highly speculative, but perhaps in the future artificial chemosensing microswimmers could see actual clinical use, and in this case it would be helpful if they were able to sense and swim effectively, perhaps by taking advantage of the efficiency afforded by cilium synchronisation and the chemosensitivity afforded by cilium geometry and motility.
+
+% One popular model of cilium synchronisation, \textit{Volvox}, is a colonial algae consisting of two different types of cells.
+
+
+
+
+
+
+
+
+% 1. SARS-CoV-2 interactions with cilia and resulting immune function change (as hinted at above)
+% 2. Surgery! That weird-ass paramecium paper
+% 3. Does metachronal synchronisation affect chemosensitivity in the same way randomness does?
+% 4. Curved surfaces and swimming behaviour, does this affect syncing?
+% 5. LRO stuff
+% 6. Cellular differentiation stuff
+% 7. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% Open questions
+% Which questions we did open, that we hadn't thought about before we found the answers we were looking for? As one would expect, these questions far outnumber the questions we (partially) answered:
+% \begin{itemize}
+%     \item Do metachronally-synchronised cilia also see an increase in per-cilium chemosensitivity? We considered random phases for our motile cilium carpet, and found that the per-cilium sensitivity was increased at sufficiently large Péclet number, but cilia in close proximity often synchronise to form metachronal waves, so this would be worth investigating.
+%     \item The real world is full of randomness, so can our nonreciprocally-coupled model cilia still synchronise when their trajectories have some noise added? This noise can come from many sources: the cilia could have slightly different intrinsic beating frequencies, there could be perturbations in the fluid flow around them due to some sort of external influence, or the cilia could have slightly varying orientations. Similarly, in the real world, cilia have some length variation, which can be quite high in the case of disease or other tissue damage; how does this affect their synchronisation?
+%     \item Cilia are often found on curved surfaces; \textit{Paramecium}, for example, has an almost ellipsoidal shape. We only modelled cilia on a flat surface, but what happens when the curvature of the surface becomes large?
+% \end{itemize}
+
+% General discussion bit - see below
+
+
+% Outlook? What has this thesis blessed the world with? What do we still need to do?
+% There are some exciting implications for this work: micropumping and microsensing devices are seeing a huge uptick in popularity as a result of the increasing capability of lab-on-a-chip devices. Our work on chemosensitivity could inform the geometry of very small-scale chemosensors, and our work on synchronisation could result in increased pumping efficiency in microscopic pumping devices -- indeed, there has already been some work on artificial cilia that pump fluid, but they had to be externally forced to synchronise, limiting their use cases.
+
+% It is known that Sars-Cov-2 (and similar diseases) attacks and kills ciliated cells in the human lungs and airway, thus inhibiting the removal of mucus and allowing pathogens to remain in places where the immune system would normally be able to clear them out. It would be of exceptional interest to understand how the removal of motile cilia can inhibit the pumping of a non-Newtonian mucus-like fluid, in order to better understand the role of cilia in this disease. Smokers can also have misshapen or damaged cilia that no longer pump effectively, which would be a related interesting inquiry.
+
+% The left-right organisation in vertebrates originates with cilia. The exact mechanism isn't known, but some hypotheses implicate chemosensing by motile nodal cilia~\sidecite{dasgupta_cilia_2016}. However, the shape of the left-right-organiser is not a simple flat lattice, and it's possible that its geometry is somehow important. It would be interesting to see exactly how ciliary dysfunction can affect the dynamics here, in order to better understand diseases like situs inversus.
+
+% Anything REALLY out there?
+% There has been some work relating to the problem of guiding the ciliated swimmer \textit{Paramecium} by enforcing chemical gradients, with a view towards one day being able to guide them inside a human body via the injection of harmless calcium salts~\sidecite{sarvestani_simulation_2016}. While the potential for applications of artificial cilia in this area are incredibly speculative at present, there is already some use of nanotechnology in medicine~\sidecite{freitas_nanotechnology_2005}, so one day there might be a role for artificial swimmers that can swim around inside a human, guided by chemical gradients. This conveniently combines both halves of this thesis, as under this proposed application, chemosensing (which is enhanced by placing chemosensors on cilia-like structures) guides swimming (which is most efficiently achieved by using synchronised structures, that could potentially be cilia-inspired).
+
+% Okay, so some implications: micropumping devices and microsensing devices can become way more effective, find some examples of micropumping and sensing devices to cite; maybe you could also talk about anything cool downstream from those devices (drug delivery lol). There's definitely space here to talk about LRO stuff, provided you find that paper which talked about 3 hypotheses for how it works one of which includes chemosensing! Do other systems synchronise hydrodynamically, and if so could we extend the model to cover them? Smokers have shitty variable cilia, covid attacks ciliated cells - is any of this workable? The latter actually is, we could examine what happens to mucus pumping with dead ciliated cells and how that affects ability to clear pathogens. What else? Bone cells have cilia that act as mechanosensors that can detect flow, which can trigger biochemical responses, so maybe I can say something about that? Paramecium is chemosensitive and can be used in surgery? Lmao there's actually a paper on that,~\cite{sarvestani_simulation_2016}
+
+% The last sentence should link back to the start. 
+This thesis began by imagining the surprise that our predecessors experienced when they came across something as shocking and inexplicable as \textit{situs inversus}, something that was completely contrary to their experiences and expectations. While we were carrying out the work we have described, we were often surprised by what we found out. Even with centuries of scientific progress, the bizarre behaviour of cilia and the wonderful world they inhabit have clearly still not run out of surprises waiting for the interested researcher.
+
+
+
+
+
+
+
+
+
+
+
+
+% Everyone now has a shitton of discussion, here but I don't actually know what it actually \textit{is}. 
+% Komal's bit:
+% - What we done (2 pages)
+% - What our results were (2 pages)
+% - There's some talk of limitations of the model (what does our hydrodynamic approach get wrong? It doesn't exactly satisfy the near field, sure, but that shouldn't be a problem for metachronal stuff). Also our cilia are all identical, which is maybe bad. (<~1 page)
+% - Then she has a bunch more about what the model gets wrong, then more limitations of the model, and limitations of the results, i.e. where they disagree with reality. (~1 page).
+% - She brings up some future work, but this can basically be summarised as "Fix limitations in the model" and is about (1 page)
+% Then a sentence that summarises the thesis in one sentence. The end.
+% - Points out that their model is very generic, which means it can also explain other kinds of learning systems like adjustable resistor networks. Then she compares a specific phenomenon in her work to a specific phenomenon in another type of learning networks. I don't know that there's an obvious analogue for me - maybe if I wanted to do a deeper analysis of artificial cilia and micropumps and microsensors and stuff?
+
+% Mirna's bit:
+% - What we done
+% - Common threads. We don't have much of that, except that ciliary hydrodynamics is great and cilia synergiser really well with one another. She talks about network hierarchy, which apparently emerged as an important thing multiple times, and also about signal processing. She touches gently on how the results differ from reality in the same paragraph and makes some guesses as to why. She gets ~2 pages out of this
+% - Comparison to neural networks, for another ~2 pages.
+% - Other systems that this thing can be helpful to study? She talks about the multinuculearity of the slime mould, and how it could be a good model organism for understanding some things like the emergence of multicellular life. Wow, that's a big claim! I could say something about LRO? This nets her around a page.
+% - Link back to the start, for just under half a page.
+
+% Stronzo's bit:
+% - What we done, and what we didn't done but could've (4 pages!)
+% - What we want to do in the future. Smarter swimmers, multiple swimmers, swimmers with memory, information theory-related costs, etc. (~1 page)
+% - "We answered some questions and opened some others. The end." (literally one sentence)
+
+% Me, so far:
+% - Cool hook: <1 page. That's probably fine. Just got to rewrite it a little bit.
+% - Open questions that we answered, i.e. what we did and what our results were: <1 page. This needs to be significantly enlarged.
+% - Applications, new open questions, that kind of thing: 2.5 pages. Needs to be reorganised but it's a good size. I wouldn't want it much bigger, since this is around the amount that Mirna wrote.
+% - Concluding statement: decent-sized paragraph. That's fine, I think this can stay the same.
